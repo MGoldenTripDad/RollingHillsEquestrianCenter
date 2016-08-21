@@ -1,0 +1,198 @@
+/*menu with jquery.horizontalNav.js*/
+
+nav { 
+	display: block;
+	z-index: 11;
+	float: right;
+	margin-left: 0px;
+	width: 46%;
+	margin-right: -56px;
+	margin-top: 35px;
+}
+
+.sf-menu {
+    margin-top: 41px;
+ 
+    margin-right: 0;
+}
+.sf-menu > li > span { display: block; position: relative;}
+.sf-menu ul { position:absolute; top:-999px; display:none; }/*offset of submenus need to match (see below)*/
+.sf-menu li { padding-left:0px; position:relative; background: none;}
+	.sf-menu a {
+		display: block;
+		text-decoration: none;
+		font-weight: normal;
+		color: #66645e;
+}
+		.sf-menu a:hover {text-decoration: none;}
+
+/*================================>> 1 Level <<========================================*/
+
+li.sfHover {position: relative;}
+.sf-menu > li > a {
+	display: inline-block;
+	line-height: 20px;
+	font-size: 11px;
+	-moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+	transition: all 0.3s ease;
+	z-index: 100;
+	font-weight: 700;
+}
+.sf-menu > li {
+	display: block;
+	min-width: 144px;
+	position: relative;
+	float: left;
+}
+	.sf-menu > li > a:hover, 
+	.sf-menu > li.current > a, 
+	.sf-menu > li.sfHover > a {
+		text-decoration: underline;
+	}
+
+.sf-menu > li > a.sf-with-ul:after {
+	position: relative;
+	display: block;
+	content:"\f105";
+	-moz-transition: top 0.3s ease-out;
+    -o-transition: top 0.3s ease-out;
+    -webkit-transition: top 0.3s ease-out;
+	overflow: hidden;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 10px;
+	padding-left: 5px;
+	padding-top: 4px;
+}
+
+.marg-left { margin: 23px 0 0 -144px;}
+
+/*================================>> 2 Level <<========================================*/
+
+.sf-menu > li > ul, 
+.sf-menu > li.sfHover > ul {
+	top: 35px;
+	left: -3px;
+	width: 158px;
+	z-index:99;
+	background: #ffffff;
+	text-align: left;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border: 1px solid #f9f9f9;
+	border-top: 0px; 
+}
+
+.sf-menu > li > ul > li { height: auto; border: none; margin: 0; padding-left: 15px;}
+
+.sf-menu > li > ul > li > a {
+	display: inline-block;
+	padding: 0px;
+	color: #4e4c45;
+	font-size: 10px;
+	line-height: 24px;
+}
+.sf-menu li li a:hover, 
+.sf-menu li.sfHover li.sfHover > a,
+.sf-menu li.sfHover li.sfHover span { 
+	color: #b9b8b1;
+	text-decoration: underline;
+}
+
+.sf-menu li li.sfHover { background: inherit;}
+
+.sf-menu > li > ul > li > a.sf-with-ul:after  {
+	position: absolute;
+	display: block;
+	content:"\f054";
+	right: 6px;
+	text-align: center;
+	margin-left: -10px;	
+	top: 8px;
+	-moz-transition: top 0.3s ease-out;
+    -o-transition: top 0.3s ease-out;
+    -webkit-transition: top 0.3s ease-out;
+	overflow: hidden;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 6px;
+}
+.sf-menu > li > ul > li > a.sf-with-ul:hover:after  { color: #fff;}
+
+/*================================>> 3 Level <<========================================*/
+
+.sf-menu li li ul {
+	top: 0px;
+	left: 0px;
+	z-index:99;
+	position: relative;
+	text-align: left;
+}
+
+.sf-menu li li li {display: block;height: auto; border: none; margin: 0; padding-left: 10px;}
+.sf-menu li li li a {
+	display: inline-block;
+	padding: 0px;
+	color: #4e4c45;
+	font-size: 10px;
+	line-height: 24px;
+}
+.sf-menu li li li a:hover {	color: #000; text-decoration: underline;}
+.sf-menu > li > li.sfHover > span {}
+
+.sf-menu > li > ul > li > a > span { top: 8px; right: 6px;}
+
+
+/*==================================RESPONSIVE LAYOUTS===============================================*/
+
+
+@media only screen and (max-width: 1030px) {
+	nav { margin-right: 0;}
+	.sf-menu { margin-right: 0;}
+}
+@media only screen and (max-width: 995px) {
+	nav { width: 59%;}
+	.sf-menu > li {}
+}
+@media only screen and (max-width: 795px) {
+
+}
+@media only screen and (max-width: 767px) {
+	nav { margin-left: 0; width: 100%; margin-bottom: 0px;}
+	.sf-menu { display:none !important;}
+
+	nav select {
+		height: 35px;
+		border: 1px solid #4e4c45;
+		font-family: Trebuchet MS, sans-serif;
+		font-size: 14px;
+		line-height: 20px;
+		color: #fff;
+		background-color: #4e4c45;
+		width: 100%;
+	    outline: none;
+	    padding: 5px;
+		font-weight: bold;
+		margin-top: 0px;
+		margin-bottom: 20px;
+}
+	nav select option:first-child {
+		color:#20201f;
+	}
+	h1, nav { float: none; overflow: visible;}
+}
+
+@media only screen and (max-width: 479px) {
+}
